@@ -70,7 +70,7 @@ apt install -y php-cli
 Disable all other MOTD scripts
 
 ```
-chmod -x /etc/default/motd-news/\*
+chmod -x /etc/default/motd-news/*
 ```
 
 Create a new script:
@@ -86,12 +86,12 @@ Add code to retrieve a quote from the public API containing Chuck Norris quotes:
 <?php
 
 $handle = fopen("https://api.chucknorris.io/jokes/random", "rb");
-$contents = stream\_get\_contents($handle);
+$contents = stream_get_contents($handle);
 fclose($handle);
-$json = json\_decode($contents);
-print PHP\_EOL;
-print $json->value . PHP\_EOL;
-print PHP\_EOL;
+$json = json_decode($contents);
+print PHP_EOL;
+print $json->value . PHP_EOL;
+print PHP_EOL;
 ```
 
 The script retrieves a random JSON payload, places it in to a JSON array and then prints a new line above and below the quote.
